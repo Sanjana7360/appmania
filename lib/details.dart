@@ -340,7 +340,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                               img: widget.img,
                               desc: widget.desc);
                           CartList.add(cart);
-                          print(CartList.length);
+
                           Navigator.of(context).push(MaterialPageRoute(
                               builder: (context) => CartPage()));
                         },

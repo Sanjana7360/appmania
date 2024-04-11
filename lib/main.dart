@@ -288,11 +288,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: <Widget>[
                     ...list
                         .map((e) => Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: InkWell(
-                            onTap: () {
-                              Navigator.of(context).push(
-                                  MaterialPageRoute(
+                              padding: const EdgeInsets.all(8.0),
+                              child: InkWell(
+                                onTap: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
                                       builder: (context) =>
                                           ProductDetailsScreen(
                                             name: e.name!,
@@ -303,132 +302,124 @@ class _MyHomePageState extends State<MyHomePage> {
                                             img: e.img!,
                                             desc: e.desc!,
                                           )));
-                            },
-                            child: Container(
-                              height: 250,
-                              width: width - 30,
-                              decoration: BoxDecoration(
-                                  color: Colors.grey.shade200,
-                                  borderRadius:
-                                      BorderRadius.circular(15)),
-                              child: Column(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        right: 8.0, top: 8.0),
-                                    child: Align(
-                                        alignment: Alignment.topRight,
-                                        child: Icon(
-                                          CupertinoIcons.heart,
-                                        )),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        bottom: 8.0),
-                                    child: CircleAvatar(
-                                      radius: 60,
-                                      backgroundImage: AssetImage(e.img!),
-                                    ),
-                                  ),
-                                  Text(
-                                    e.name!,
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        left: 30.0, right: 30.0),
-                                    child: Row(
-                                      children: [
-                                        Text(
-                                          e.time!,
-                                          style: TextStyle(
-                                              fontSize: 12,
-                                              color: Colors.grey.shade500,
-                                              fontWeight:
-                                                  FontWeight.bold),
-                                        ),
-                                        SizedBox(
-                                          width: 30,
-                                        ),
-                                        Icon(
-                                          CupertinoIcons.star,
-                                          color: Colors.amber,
-                                          size: 12,
-                                        ),
-                                        Text(
-                                          e.rating!,
-                                          style: TextStyle(
-                                              fontSize: 12,
-                                              color: Colors.grey.shade500,
-                                              fontWeight:
-                                                  FontWeight.bold),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 18,
-                                  ),
-                                  Row(
+                                },
+                                child: Container(
+                                  height: 250,
+                                  width: width - 30,
+                                  decoration: BoxDecoration(
+                                      color: Colors.grey.shade200,
+                                      borderRadius: BorderRadius.circular(15)),
+                                  child: Column(
                                     children: [
-                                      SizedBox(
-                                        width: 20,
+                                      Padding(
+                                        padding: const EdgeInsets.only(
+                                            right: 8.0, top: 8.0),
+                                        child: Align(
+                                            alignment: Alignment.topRight,
+                                            child: Icon(
+                                              CupertinoIcons.heart,
+                                            )),
                                       ),
-                                      Icon(
-                                        CupertinoIcons.money_dollar,
-                                        size: 20,
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(bottom: 8.0),
+                                        child: CircleAvatar(
+                                          radius: 60,
+                                          backgroundImage: AssetImage(e.img!),
+                                        ),
                                       ),
                                       Text(
-                                        e.price.toString(),
+                                        e.name!,
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold),
                                       ),
-                                      // SizedBox(
-                                      //   width: 61.3,
-                                      // ),
-                                      Spacer(),
-                                      InkWell(
-                                        onTap: (){
-                                          DetailModel cart = DetailModel(
-                                              id: e.id!,
-                                              name: e.name!,
-                                              time: e.time!,
-                                              rating: e.rating!,
-                                              price: e.price!,
-                                              calories: e.calories!,
-                                              img: e.img!,
-                                              desc: e.desc!,
-                                              qty: 1);
-                                        },
-
-                                        child: Container(
-                                          clipBehavior: Clip.none,
-                                          height: 35,
-                                          width: 35,
-                                          decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.only(
-                                                topLeft:
-                                                Radius.circular(15),
-                                                bottomRight:
-                                                Radius.circular(15)),
-                                            color: Color(0xff5DC448),
-                                          ),
-                                          child: Icon(
-                                            CupertinoIcons.plus,
-                                            color: Colors.white,
-                                            size: 14,
-                                          ),
+                                      Padding(
+                                        padding: const EdgeInsets.only(
+                                            left: 30.0, right: 30.0),
+                                        child: Row(
+                                          children: [
+                                            Text(
+                                              e.time!,
+                                              style: TextStyle(
+                                                  fontSize: 12,
+                                                  color: Colors.grey.shade500,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            SizedBox(
+                                              width: 30,
+                                            ),
+                                            Icon(
+                                              CupertinoIcons.star,
+                                              color: Colors.amber,
+                                              size: 12,
+                                            ),
+                                            Text(
+                                              e.rating!,
+                                              style: TextStyle(
+                                                  fontSize: 12,
+                                                  color: Colors.grey.shade500,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                          ],
                                         ),
+                                      ),
+                                      SizedBox(
+                                        height: 18,
+                                      ),
+                                      Row(
+                                        children: [
+                                          SizedBox(
+                                            width: 20,
+                                          ),
+
+                                          Text(
+                                            '\$' + e.price.toString(),
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                          // SizedBox(
+                                          //   width: 61.3,
+                                          // ),
+                                          Spacer(),
+                                          InkWell(
+                                            onTap: () {
+                                              CartModel hcart = CartModel(
+                                                  counter: 1,
+                                                  name: e.name!,
+                                                  time: e.time!,
+                                                  rating: e.rating!,
+                                                  price: e.price!,
+                                                  calories: e.calories!,
+                                                  img: e.img!,
+                                                  desc: e.desc!);
+                                              CartList.add(hcart);
+                                            },
+                                            child: Container(
+                                              clipBehavior: Clip.none,
+                                              height: 35,
+                                              width: 35,
+                                              decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.only(
+                                                    topLeft:
+                                                        Radius.circular(15),
+                                                    bottomRight:
+                                                        Radius.circular(15)),
+                                                color: Color(0xff5DC448),
+                                              ),
+                                              child: Icon(
+                                                CupertinoIcons.plus,
+                                                color: Colors.white,
+                                                size: 14,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     ],
                                   ),
-
-                                ],
+                                ),
                               ),
-                            ),
-                          ),
-                        ))
+                            ))
                         .toList(),
                   ],
                 ),
@@ -442,27 +433,3 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class DetailModel {
-  final int id;
-  final String name;
-  final String time;
-  final String rating;
-  final double price;
-  final String calories;
-  final String img;
-  final String desc;
-  final int qty;
-
-  DetailModel(
-      {required this.qty,
-      required this.id,
-      required this.name,
-      required this.time,
-      required this.rating,
-      required this.price,
-      required this.calories,
-      required this.img,
-      required this.desc}) {}
-}
-
-List<DetailModel> DetailList = [];
